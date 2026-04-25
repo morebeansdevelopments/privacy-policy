@@ -1,235 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — More Beans Developments</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0f0f0f;
-      --surface: #1a1a1a;
-      --border: #2a2a2a;
-      --text: #e8e4dc;
-      --muted: #888;
-      --accent: #c8a96e;
-      --accent-soft: rgba(200, 169, 110, 0.12);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — More Beans Developments</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #faf9f7;
+    --surface: #ffffff;
+    --border: #e8e4de;
+    --text: #1a1a1a;
+    --muted: #888880;
+    --accent: #1a8a7a;
+    --max: 860px;
+  }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.8;
-      font-size: 16px;
-    }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+  }
 
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 3rem 2rem 2.5rem;
-      max-width: 780px;
-      margin: 0 auto;
-    }
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: center;
+  }
 
-    .brand {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
+  .header-inner {
+    width: 100%;
+    max-width: var(--max);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 400;
-      line-height: 1.2;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
+  .brand {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+  }
 
-    .meta {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
+  .brand span { color: var(--accent); }
 
-    main {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 3rem 2rem 6rem;
-    }
+  nav a {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.2s;
+  }
 
-    section {
-      margin-bottom: 3rem;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid var(--border);
-    }
+  nav a:hover { color: var(--text); }
 
-    section:last-child {
-      border-bottom: none;
-    }
+  /* ── Page title ── */
+  .page-title {
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 2rem 2.5rem;
+    display: flex;
+    justify-content: center;
+  }
 
-    h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: var(--accent);
-      margin-bottom: 1.2rem;
-    }
+  .page-title-inner {
+    width: 100%;
+    max-width: var(--max);
+  }
 
-    p {
-      margin-bottom: 1rem;
-      color: var(--text);
-    }
+  .page-title h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
 
-    p:last-child { margin-bottom: 0; }
+  .page-title .meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
 
-    ul {
-      margin: 1rem 0 1rem 1.5rem;
-    }
+  /* ── Main content ── */
+  main {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 2rem 4rem;
+  }
 
-    li {
-      margin-bottom: 0.5rem;
-    }
+  .content {
+    width: 100%;
+    max-width: var(--max);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(200, 169, 110, 0.3);
-      transition: border-color 0.2s;
-    }
+  /* ── Sticky TOC ── */
+  .toc {
+    position: sticky;
+    top: 2rem;
+    font-size: 0.8rem;
+  }
 
-    a:hover {
-      border-color: var(--accent);
-    }
+  .toc p {
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    margin-bottom: 0.8rem;
+  }
 
-    .highlight-box {
-      background: var(--accent-soft);
-      border-left: 3px solid var(--accent);
-      padding: 1.2rem 1.5rem;
-      margin: 1.5rem 0;
-      border-radius: 0 4px 4px 0;
-    }
+  .toc a {
+    display: block;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.25rem 0;
+    border-left: 2px solid var(--border);
+    padding-left: 0.75rem;
+    transition: color 0.2s, border-color 0.2s;
+    line-height: 1.4;
+    margin-bottom: 0.1rem;
+  }
 
-    .highlight-box p {
-      margin: 0;
-      font-size: 0.95rem;
-    }
+  .toc a:hover {
+    color: var(--text);
+    border-color: var(--accent);
+  }
 
-    footer {
-      border-top: 1px solid var(--border);
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 2rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-align: center;
-    }
-  </style>
+  /* ── Article ── */
+  article section {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  article section:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  article h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  article p {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 0.9rem;
+    line-height: 1.75;
+  }
+
+  article p:last-child { margin-bottom: 0; }
+
+  article ul {
+    list-style: none;
+    margin: 0.5rem 0 0.9rem 0;
+    padding: 0;
+  }
+
+  article ul li {
+    font-size: 0.95rem;
+    color: #444;
+    padding: 0.2rem 0 0.2rem 1.2rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  article ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+    top: 0.3rem;
+  }
+
+  article a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  article a:hover { border-color: var(--accent); }
+
+  .highlight-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.7;
+  }
+
+  .highlight-box strong {
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-inner {
+    width: 100%;
+    max-width: var(--max);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  footer a {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 660px) {
+    .content { grid-template-columns: 1fr; gap: 0; }
+    .toc { display: none; }
+    .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+    footer a { margin-left: 0; margin-right: 1rem; }
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <p class="brand">More Beans Developments</p>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="/">More Beans <span>Developments</span></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="https://more-beans-calculator.sleekplan.app/?type=t69a5566056b5dc">Report a Bug</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-title">
+  <div class="page-title-inner">
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: 9 March 2026 &nbsp;·&nbsp; Last updated: 9 March 2026</p>
-  </header>
+    <p class="meta">Effective date: 9 March 2026 · Last updated: 9 March 2026</p>
+  </div>
+</div>
 
-  <main>
+<main>
+  <div class="content">
 
-    <section>
-      <h2>Overview</h2>
-      <p>This Privacy Policy applies to the mobile application (the "Application") developed and published by More Beans Developments (the "Service Provider"). The Application is provided as an ad-supported service and is intended for use "AS IS".</p>
-      <p>This policy explains what data is collected when you use the Application, how it is used, and your rights in relation to that data. By using the Application, you agree to the practices described in this policy.</p>
-    </section>
+    <nav class="toc">
+      <p>Contents</p>
+      <a href="#overview">Overview</a>
+      <a href="#collection">Information Collection</a>
+      <a href="#advertising">Advertising</a>
+      <a href="#location">Location Information</a>
+      <a href="#children">Children's Privacy</a>
+      <a href="#rights-uk">Your Rights (UK & EEA)</a>
+      <a href="#rights-ca">Your Rights (California)</a>
+      <a href="#security">Security</a>
+      <a href="#changes">Changes to This Policy</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
 
-    <section>
-      <h2>Information Collection and Use</h2>
-      <p>The Application does not require you to create an account or register. The Service Provider does not directly collect personally identifiable information from you.</p>
-      <p>However, the Application uses third-party services that may collect certain data in order to serve advertisements and improve performance. The data collected by these third-party services may include:</p>
-      <ul>
-        <li>Your device's IP address, which may be used to estimate approximate location</li>
-        <li>A device identifier such as your advertising identifier (IDFA)</li>
-        <li>Advertising data, such as advertisements you have seen</li>
-        <li>Product interaction data, such as app launch taps and video views</li>
-        <li>Performance data, such as app launch time and energy usage</li>
-        <li>Non-user related crash logs and diagnostic information</li>
-      </ul>
-      <p>This data is collected and processed by our third-party advertising partner. Please review their privacy policy for full details:</p>
-      <ul>
-        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google AdMob Privacy Policy</a></li>
-      </ul>
-    </section>
+    <article>
 
-    <section>
-      <h2>Advertising</h2>
-      <p>The Application uses Google AdMob to serve advertisements, including rewarded ads that allow you to unlock additional features. Google and its partners may use your device identifier and other data to serve personalised advertisements based on your prior interactions with this Application and other apps or websites.</p>
-      <p>You may opt out of personalised advertising at any time:</p>
-      <ul>
-        <li>Via <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a></li>
-        <li>Via your device settings under Privacy &gt; Tracking (iOS)</li>
-      </ul>
-      <div class="highlight-box">
+      <section id="overview">
+        <h2>Overview</h2>
+        <p>This Privacy Policy applies to the mobile application (the "Application") developed and published by More Beans Developments (the "Service Provider"). The Application is provided as an ad-supported service and is intended for use "AS IS".</p>
+        <p>This policy explains what data is collected when you use the Application, how it is used, and your rights in relation to that data. By using the Application, you agree to the practices described in this policy.</p>
+      </section>
+
+      <section id="collection">
+        <h2>Information Collection and Use</h2>
+        <p>The Application does not require you to create an account or register. The Service Provider does not directly collect personally identifiable information from you.</p>
+        <p>However, the Application uses third-party services that may collect certain data in order to serve advertisements and improve performance. The data collected by these third-party services may include:</p>
+        <ul>
+          <li>Your device's IP address, which may be used to estimate approximate location</li>
+          <li>A device identifier such as your advertising identifier (IDFA)</li>
+          <li>Advertising data, such as advertisements you have seen</li>
+          <li>Product interaction data, such as app launch taps and video views</li>
+          <li>Performance data, such as app launch time and energy usage</li>
+          <li>Non-user related crash logs and diagnostic information</li>
+        </ul>
+        <p>This data is collected and processed by our third-party advertising partner. Please review their privacy policy for full details: <a href="https://policies.google.com/privacy" target="_blank">Google AdMob Privacy Policy</a>.</p>
+      </section>
+
+      <section id="advertising">
+        <h2>Advertising</h2>
+        <p>The Application uses Google AdMob to serve advertisements, including rewarded ads that allow you to unlock additional features. Google and its partners may use your device identifier and other data to serve personalised advertisements based on your prior interactions with this Application and other apps or websites.</p>
+        <p>You may opt out of personalised advertising at any time:</p>
+        <ul>
+          <li>Via <a href="https://adssettings.google.com" target="_blank">Google Ads Settings</a></li>
+          <li>Via your device settings under Privacy &gt; Tracking (iOS)</li>
+        </ul>
         <p>If you opt out of personalised advertising, you will still see advertisements in the Application, but they will not be tailored to your interests.</p>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h2>Location Information</h2>
-      <p>The Application does not request or collect precise real-time location data from your device. An approximate location may be inferred from your IP address by our third-party advertising partner for the purpose of serving relevant advertisements. This is handled entirely by the third-party service and not by the Service Provider directly.</p>
-    </section>
+      <section id="location">
+        <h2>Location Information</h2>
+        <p>The Application does not request or collect precise real-time location data from your device. An approximate location may be inferred from your IP address by our third-party advertising partner for the purpose of serving relevant advertisements. This is handled entirely by the third-party service and not by the Service Provider directly.</p>
+      </section>
 
-    <section>
-      <h2>Children's Privacy</h2>
-      <p>The Application is rated 4+ and is suitable for all ages. However, the Service Provider does not knowingly collect personally identifiable information from children under the age of 13. If it is discovered that a child under 13 has provided personal information, it will be deleted immediately from our records.</p>
-      <p>If you are under the age of 16 (or the minimum age of digital consent in your country), you should obtain permission from a parent or guardian before using the Application.</p>
-    </section>
+      <section id="children">
+        <h2>Children's Privacy</h2>
+        <p>The Application is rated 4+ and is suitable for all ages. However, the Service Provider does not knowingly collect personally identifiable information from children under the age of 13. If it is discovered that a child under 13 has provided personal information, it will be deleted immediately from our records.</p>
+        <p>If you are under the age of 16 (or the minimum age of digital consent in your country), you should obtain permission from a parent or guardian before using the Application.</p>
+      </section>
 
-    <section>
-      <h2>Your Rights (UK &amp; EEA Users)</h2>
-      <p>If you are located in the United Kingdom or the European Economic Area, you have rights under the UK GDPR and EU GDPR respectively. These include the right to:</p>
-      <ul>
-        <li>Access the personal data held about you</li>
-        <li>Request correction of inaccurate data</li>
-        <li>Request deletion of your data</li>
-        <li>Object to or restrict the processing of your data</li>
-        <li>Withdraw consent at any time where processing is based on consent</li>
-        <li>Lodge a complaint with the relevant supervisory authority (in the UK, the ICO at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>)</li>
-      </ul>
-      <p>To exercise any of these rights, please contact us using the details in the Contact section below.</p>
-    </section>
+      <section id="rights-uk">
+        <h2>Your Rights (UK &amp; EEA Users)</h2>
+        <p>If you are located in the United Kingdom or the European Economic Area, you have rights under the UK GDPR and EU GDPR respectively. These include the right to:</p>
+        <ul>
+          <li>Access the personal data held about you</li>
+          <li>Request correction of inaccurate data</li>
+          <li>Request deletion of your data</li>
+          <li>Object to or restrict the processing of your data</li>
+          <li>Withdraw consent at any time where processing is based on consent</li>
+          <li>Lodge a complaint with the relevant supervisory authority (in the UK, the ICO at <a href="https://ico.org.uk" target="_blank">ico.org.uk</a>)</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us using the details in the Contact section below.</p>
+      </section>
 
-    <section>
-      <h2>Your Rights (California Users — CCPA)</h2>
-      <p>If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA), including the right to:</p>
-      <ul>
-        <li>Know what personal information is collected about you</li>
-        <li>Know whether your personal information is sold or disclosed, and to whom</li>
-        <li>Opt out of the sale of your personal information</li>
-        <li>Request deletion of your personal information</li>
-        <li>Not be discriminated against for exercising your privacy rights</li>
-      </ul>
-      <p>The Application does not sell your personal information directly. However, the sharing of device identifiers and advertising data with Google AdMob may constitute a "sale" under the CCPA's broad definition. You may opt out via your device's ad personalisation settings.</p>
-    </section>
+      <section id="rights-ca">
+        <h2>Your Rights (California Users — CCPA)</h2>
+        <p>If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA), including the right to:</p>
+        <ul>
+          <li>Know what personal information is collected about you</li>
+          <li>Know whether your personal information is sold or disclosed, and to whom</li>
+          <li>Opt out of the sale of your personal information</li>
+          <li>Request deletion of your personal information</li>
+          <li>Not be discriminated against for exercising your privacy rights</li>
+        </ul>
+        <p>The Application does not sell your personal information directly. However, the sharing of device identifiers and advertising data with Google AdMob may constitute a "sale" under the CCPA's broad definition. You may opt out via your device's ad personalisation settings.</p>
+      </section>
 
-    <section>
-      <h2>Security</h2>
-      <p>The Service Provider is committed to protecting your information. The Application does not store personal data on our own servers. All data handling is performed by our third-party partners in accordance with their own security practices. While we endeavour to use commercially acceptable means of protecting your information, no method of transmission or electronic storage is 100% secure.</p>
-    </section>
+      <section id="security">
+        <h2>Security</h2>
+        <p>The Service Provider is committed to protecting your information. The Application does not store personal data on our own servers. All data handling is performed by our third-party partners in accordance with their own security practices. While we endeavour to use commercially acceptable means of protecting your information, no method of transmission or electronic storage is 100% secure.</p>
+      </section>
 
-    <section>
-      <h2>Changes to This Policy</h2>
-      <p>This Privacy Policy may be updated from time to time. Any changes will be reflected on this page with an updated effective date. Continued use of the Application after any changes constitutes your acceptance of the revised policy. You are encouraged to review this page periodically.</p>
-    </section>
+      <section id="changes">
+        <h2>Changes to This Policy</h2>
+        <p>This Privacy Policy may be updated from time to time. Any changes will be reflected on this page with an updated effective date. Continued use of the Application after any changes constitutes your acceptance of the revised policy. You are encouraged to review this page periodically.</p>
+      </section>
 
-    <section>
-      <h2>Contact Us</h2>
-      <p>If you have any questions or concerns about this Privacy Policy or the data practices of the Application, please contact the Service Provider via the support link on the Application's App Store listing.</p>
-      <div class="highlight-box">
-        <p><strong>More Beans Developments</strong><br />
-        Support requests can be submitted via the App Store listing for this Application.</p>
-      </div>
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or concerns about this Privacy Policy or the data practices of the Application, please contact the Service Provider via the support link on the Application's App Store listing.</p>
+        <div class="highlight-box">
+          <strong>More Beans Developments</strong><br>
+          Support requests can be submitted via the App Store listing for this Application.
+        </div>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>© Paul Flowers 2026 · More Beans Developments</p>
+    <div>
+      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href="https://more-beans-calculator.sleekplan.app/?type=t69a5566056b5dc">Report a Bug</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
